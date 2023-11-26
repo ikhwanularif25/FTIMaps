@@ -27,7 +27,7 @@ if ($conn->connect_error) {
 <body>
     <header>
         <img src="pictures/logoUnand.png" alt="">
-        <!-- <img src="pictures/logo2.png" alt=""> -->
+        <!-- <img src="pictures/fti.png" alt=""> -->
     </header>
 
     <main>
@@ -53,9 +53,10 @@ if ($conn->connect_error) {
             </div>
             <div class="search-maps">
                 <div class="search-bar">
-                    <input type="text" placeholder="Search for a location...">
+                    <input type="text" id="searchInput" placeholder="Search for a location...">
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
+                <div id="suggestionsBox"></div>
                 <div class="mini-map">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3092966718223!2d100.45558247590172!3d-0.9152393353350885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b7969c6d51df%3A0xe826014ce459af90!2sAndalas%20University!5e0!3m2!1sen!2sid!4v1700902816296!5m2!1sen!2sid"
@@ -81,6 +82,20 @@ if ($conn->connect_error) {
             </div>
         </div>
     </footer>
+
+     <script>
+        // Tangani event saat tombol Enter ditekan pada kolom pencarian
+        document.getElementById("searchInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Mencegah perilaku bawaan form
+
+                // Mengarahkan ke halaman tetap tanpa memperhitungkan input
+                window.location.href = "description.php";
+                // Ganti "https://example.com/search-result-page" dengan URL halaman hasil pencarian Anda
+            }
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

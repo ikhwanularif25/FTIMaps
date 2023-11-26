@@ -28,7 +28,7 @@ if ($conn->connect_error) {
     <header>
         <div class="logo">
             <img src="pictures/logoUnand.png" alt="">
-        <!-- <img src="pictures/logo2.png" alt=""> -->
+        <!-- <img src="picture/fti.png" alt=""> -->
         <a href="index.php"><h1>FTI MINI MAPS</h1></a>
         
         </div>
@@ -45,7 +45,7 @@ if ($conn->connect_error) {
         <section class="map-container">
             <div class="deskripsi">
                 <div class="judul">
-                        <h1>FTI MINI</h1>
+                        <h1>Fakultas Teknologi Informasi</h1>
                 </div>
 
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eveniet odit magnam commodi ea nemo
@@ -60,7 +60,7 @@ if ($conn->connect_error) {
                 
                 <div class="mini-map2">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3092966718223!2d100.45558247590172!3d-0.9152393353350885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b7969c6d51df%3A0xe826014ce459af90!2sAndalas%20University!5e0!3m2!1sen!2sid!4v1700902816296!5m2!1sen!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3091786493746!2d100.45847837590176!3d-0.9153454353351366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b7963e1ea631%3A0x452d09b61f76d6ec!2sFaculty%20of%20Information%20Technology!5e0!3m2!1sen!2sid!4v1700993283989!5m2!1sen!2sid"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
