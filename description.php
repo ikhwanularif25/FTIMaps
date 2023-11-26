@@ -10,6 +10,19 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die('Koneksi database gagal: ' . $conn->connect_error);
 }
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id_gedung"])) {
+    $id_gedung = $_GET["id_gedung"];
+
+    // Query untuk mendapatkan informasi dari database
+    $sql = "SELECT gmaps, keterangan_tempat FROM gedung WHERE id_gedung = $id_gedung";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $gmaps = $row["gmaps"];
+        $keterangan_tempat = $row["keterangan_tempat"];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -83,6 +96,37 @@ if ($conn->connect_error) {
             </div>
         </div>
     </footer>
+
+        <script>
+        var gmaps = "<?php echo isset($gmaps) ? $gmaps : ''; ?>";
+        var keteranganTempat = "<?php echo isset($keterangan_tempat) ? $keterangan_tempat : ''; ?>";
+
+        document.getElementById('searchInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+
+                // Perbarui konten saat pencarian dikirimkan
+                var iframe = document.querySelector('.mini-map2 iframe');
+                var deskripsi = document.querySelector('.deskripsi p');
+
+                // Perbarui iframe dengan gmaps
+                if (gmaps) {
+                    iframe.src = gmaps;
+                }
+
+                // Perbarui judul dan keterangan tempat
+                var idGedung = "<?php echo isset($id_gedung) ? $id_gedung : ''; ?>";
+                var judul = document.querySelector('.judul h1');
+                if (idGedung) {
+                    judul.textContent = idGedung;
+                }
+
+                if (keteranganTempat) {
+                    deskripsi.textContent = keteranganTempat;
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
