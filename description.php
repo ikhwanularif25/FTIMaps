@@ -61,13 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id_gedung"])) {
                         <h1>Fakultas Teknologi Informasi</h1>
                 </div>
 
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos eveniet odit magnam commodi ea nemo
-                    modi a, praesentium repellendus sunt. Dolore hic error molestias, temporibus nam sapiente officia
-                    deserunt! Quasi Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non ducimus explicabo aut
-                    labore impedit, beatae cum similique, dolor ratione, natus numquam dolores optio maxime inventore?
-                    Sequi quis voluptas accusamus est. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
-                    aliquam placeat, minima, consequatur perferendis labore quae expedita nobis totam odit magni ipsa
-                    dolor amet nihil atque. Doloremque eaque ut consequatur..</p>
+                <p>Gedung Fakultas Teknologi berada menyatu dengan Gedung E, dekat dengan Gedung Pascasarjana. Pada Fakultas Teknologi Informasi terdapat ruang administrasi, kantor dekan dan staf administratif fakultas, PKM (Pusat Kegiatan Mahasiswa), ruang rapat FTI, ruang Baca, mushala, toilet, serta laboratorium-laboratorium setiap departemen yang ada di Fakultas Teknologi Informasi yaitu Departemen Teknik Komputer, Sistem Informasi, dan Informatika.</p>
             </div>
             <div class="search-maps2">
                 
