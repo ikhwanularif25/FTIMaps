@@ -1,15 +1,7 @@
 <?php
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'ftimaps';
+require 'api/connection.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die('Koneksi database gagal: ' . $conn->connect_error);
-}
 ?>
 
 
@@ -19,7 +11,7 @@ if ($conn->connect_error) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/coba.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>FTIMaps</title>
 </head>
@@ -27,7 +19,9 @@ if ($conn->connect_error) {
 <body>
     <header>
         <img src="pictures/logoUnand.png" alt="">
-        <!-- <img src="pictures/fti.png" alt=""> -->
+        <div class="admin">
+            <a href="admin.php">Admin</a>
+        </div>
     </header>
 
     <main>
@@ -53,8 +47,10 @@ if ($conn->connect_error) {
             </div>
             <div class="search-maps">
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="Search for a location...">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <form method="GET" id="getsearch">
+                        <input type="text" placeholder="Search for a location..." id="search_query">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
                 <div id="suggestionsBox"></div>
                 <div class="mini-map">
@@ -70,32 +66,17 @@ if ($conn->connect_error) {
     <footer>
         <h2 class="footer-atas">FAKULTAS TEKNOLOGI INFORMASI</h2>
         <div class="footer-bawah">
-            <div class="footer_kiri">
+            
                 <p><i class="fas fa-phone"><span class="contact-info"></span></i>Contact Person : +62 812 737723972</p>
-                <p><i class="far fa-envelope"><span class="contact-info"></span></i>Email : sekretariat@it.unand.ac.id
-                </p>
-            </div>
-            <div class="footer_kanan">
+                <p><i class="far fa-envelope"><span class="contact-info"></span></i>Email : sekretariat@it.unand.ac.id</p>
                 <p>Kampus Limau Manis</p>
                 <p>Limau Manis, Kec. Pauh</p>
                 <p>Padang, Indonesia</p>
-            </div>
+            
         </div>
     </footer>
 
-     <script>
-        // Tangani event saat tombol Enter ditekan pada kolom pencarian
-        document.getElementById("searchInput").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                event.preventDefault(); // Mencegah perilaku bawaan form
-
-                // Mengarahkan ke halaman tetap tanpa memperhitungkan input
-                window.location.href = "description.php";
-                // Ganti "https://example.com/search-result-page" dengan URL halaman hasil pencarian Anda
-            }
-        });
-    </script>
-    <script src="script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

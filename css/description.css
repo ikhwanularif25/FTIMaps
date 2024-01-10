@@ -1,3 +1,11 @@
+:root {
+    --grey-colour: #AAAAAA;
+    --black-colour: #141414;
+    --white-colour: #fff;
+    --white2-coloir: #ccc;
+    --white3-colour: #f0f0f0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -42,7 +50,7 @@ header .search-bar button {
 }
 
 .deskripsi {
-    /* height: 60%; */
+    max-width: 35vw;
 }
 
 .deskripsi .judul h1 {
@@ -58,9 +66,20 @@ header .search-bar button {
     padding-inline: 0;
 }
 .mini-map2{
-    background-color: #333;
     height: 100%;
-    width: 1200px;
+    max-width: 60vw ;
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 2px 2px 10px var(--grey-colour);
+}
+
+a{
+    color: var(--black-colour);
+    font-size: 50pt;
+    font-weight: bolder;
+}
+
+.admin a{
+    color: var(--black-colour);
+    font-size: 16pt;
 }

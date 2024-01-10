@@ -1,0 +1,338 @@
+:root {
+    --grey-colour: #AAAAAA;
+    --black-colour: #141414;
+    --white-colour: #fff;
+    --white2-colour: #ccc;
+    --white3-colour: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.content {
+    height: 65.5vh;
+    width: 80%;
+}
+
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 50px;
+    height: 15vh;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px var(--grey-colour);
+}
+
+.dropdown{
+    padding-top: 50px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 15vh;
+    left: 0;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: var(--white2-colour);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    padding: 50px;
+    align-items: center;
+}
+
+.sidebar button {
+    background-color: var(--grey-colour);
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+    box-shadow: 2px 2px 10px var(--gray-colour);
+}
+
+.sidebar button:hover {
+    cursor: pointer;
+}
+
+main {
+    margin-left: 250px;
+    margin-right: 50px;
+    /* margin-bottom: 25%; */
+    padding-top: 16vh;
+    padding-bottom: 16vh;
+    scroll-behavior: smooth;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid var(--grey-colour);
+}
+
+td {
+    border: 1px solid var(--grey-colour);
+    padding: 8px;
+}
+
+td:nth-child(1) {
+    width: 10%;
+    text-align: center;
+}
+
+td:nth-child(2) {
+    width: 25%;
+}
+
+td:nth-child(5) {
+    width: 8%;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+td form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+td button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.contents {
+    display: none;
+}
+
+.contents.show {
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--black-colour);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 15vh;
+    justify-content: center;
+}
+
+.footer-atas {
+    color: var(--white-colour);
+    padding: 15px;
+}
+
+.footer-bawah {
+    background-color: var(--black-colour);
+    color: var(--white-colour);
+    gap: 15px;
+}
+
+
+img {
+    height: 100%;
+}
+
+/* test */
+
+/* Gaya untuk judul h2 */
+.edit h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Gaya untuk label */
+label {
+    display: block;
+    /* Membuat label menjadi blok, memisahkannya ke baris baru */
+    margin-bottom: 5px;
+    /* Jarak bawah */
+}
+
+/* Gaya untuk input teks */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    /* Ruang padding */
+    margin-bottom: 10px;
+    /* Jarak bawah */
+    border: 1px solid #ccc;
+    /* Garis batas */
+    border-radius: 4px;
+    /* Sudut bulat */
+}
+
+textarea {
+    height: 200px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    resize: vertical;
+}
+
+/* Gaya untuk tombol submit */
+input[type="submit"] {
+    background-color: #4CAF50;
+    /* Warna latar belakang */
+    color: white;
+    /* Warna teks */
+    padding: 10px 20px;
+    /* Ruang padding */
+    border: none;
+    /* Tanpa batas */
+    border-radius: 4px;
+    /* Sudut bulat */
+    cursor: pointer;
+    /* Ubah pointer saat dihover */
+}
+
+/* Gaya saat tombol disorot */
+input[type="submit"]:hover {
+    background-color: #45a049;
+    /* Warna latar belakang saat dihover */
+}
+
+.gmaps-edit {
+    height: 100px;
+}
+
+.edit {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 2px 10px var(--black-colour);
+    z-index: 9999;
+    width: 60%;
+    height: 60%;
+    max-width: 600px;
+    max-height: 600px;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+/* edituser.css */
+
+/* CSS untuk modal */
+/* CSS untuk modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Konten modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* Atur margin untuk posisi di tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    /* Tambahkan sudut yang lebih lembut */
+}
+
+/* Tombol untuk menutup modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style untuk form di dalam modal */
+#userSettingsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style untuk label pada form */
+.modal label {
+    margin-bottom: 5px;
+}
+
+/* Style untuk input pada form */
+.modal input[type="text"],
+.modal input[type="password"],
+.modal button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style untuk tombol 'Perbarui Pengguna' */
+.modal button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.logo{
+    justify-content: center;
+    display: flex;
+}
+.logo a {
+    color: var(--black-colour);
+    font-size: 50pt;
+    font-weight: bolder;
+    padding-top: 30px;
+}
+
