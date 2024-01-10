@@ -6,6 +6,10 @@
     --white3-colour: #f0f0f0;
 }
 
+html, body{
+    overflow-y: hidden;
+}
+
 header {
     display: flex;
     justify-content: space-between;
